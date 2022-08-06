@@ -1,0 +1,92 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "nodejs-template",
+      "version": "1.0.0",
+      "title": "Sample nodejs template project"
+    },
+    "schemes": [
+      "https",
+      "http"
+    ],
+    "paths": {
+      "/health": {
+        "get": {
+          "tags": [
+            "Health"
+          ],
+          "summary": "Verify application health",
+          "operationId": "health",
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/book": {
+        "post": {
+          "tags": [
+            "Book"
+          ],
+          "summary": "Create a new book item",
+          "description": "",
+          "operationId": "createBook",
+          "parameters": [{
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/book"
+            }
+          }],
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/book/count": {
+        "get": {
+          "tags": [
+            "Book"
+          ],
+          "summary": "Get total books count",
+          "operationId": "getBookCount",
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/book/data": {
+        "get": {
+          "tags": [
+            "Book"
+          ],
+          "summary": "Get all the book records",
+          "operationId": "getAllBookRecords",
+          "responses": {
+            "200": {
+              "description": "successful operation"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "book": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "example": "The Subtle Art of Not Giving a Fuck-1"
+            }
+          }
+        }
+      }
+    }
+  }
